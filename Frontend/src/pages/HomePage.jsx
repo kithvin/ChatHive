@@ -18,11 +18,20 @@ const HomePage = () => {
         }`}
       >
         {/* Sidebar component : Handles user selection, navigation, or contact list*/}
-        <Sidebar selectedUser={selectedUser} setSelectedUser={setSelectedUser}/>
-        {/* ChatContainer component (center) */}
-        <ChatContainer />
-        {/* RightSidebar component (right) */}
-        <RightSidebar />
+        <Sidebar
+          selectedUser={selectedUser}
+          setSelectedUser={setSelectedUser}
+        />
+        {/* ChatContainer component : Main messaging/chat area */}
+        <ChatContainer
+          selectedUser={selectedUser}
+          setSelectedUser={setSelectedUser}
+        />
+        {/* RightSidebar : Could show additional user info or actions */}
+        <RightSidebar
+          selectedUser={selectedUser}
+          setSelectedUser={setSelectedUser}
+        />
       </div>
     </div>
   );
