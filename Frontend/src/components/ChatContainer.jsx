@@ -95,6 +95,34 @@ const ChatContainer = ({ selectedUser, setSelectedUser }) => {
 
         <div ref={scrollEnd}></div>
       </div>
+
+      {/* ------------------------ Bottom Area --------------------------------- */}
+
+      <div className="absolute bottom-0 left-0 right-0 flex items-center gap-3 p-3">
+        {/* Message input container with light transparent background */}
+
+        <div className="flex-1 flex items-center bg-gray-100/12 px-3 rounded-full">
+          {/* Text input for sending messages */}
+          <input
+            type="text"
+            placeholder="Send a message"
+            className="flex-1 sext-sm p-3 border-none rounded-lg outline-none text-white placeholder-gray-400"
+          />
+          <input type="file" id="image" accept="image/png, image/jpeg" hidden />
+
+          {/* Label acts as the clickable button for image upload */}
+          <label htmlFor="image">
+            <img
+              src={assets.gallery_icon}
+              alt=""
+              className="w-5 mr-2 cursor-pointer"
+            />
+          </label>
+        </div>
+
+        {/* Send button (image icon) */}
+        <img src={assets.send_button} alt="" className="w-7 cursor-pointer" />
+      </div>
     </div>
   ) : (
     // Show default UI if no user is selected
